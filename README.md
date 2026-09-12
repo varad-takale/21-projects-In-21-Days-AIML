@@ -354,4 +354,265 @@ It demonstrates how Python-based data analysis techniques can be used to transfo
 Computer Engineering Graduate
 Interested in **Data Analytics, Java Development, and Software Engineering**.
 
+# Project 3:🏠 House Price Prediction using Machine Learning
+
+## 📌 Project Overview
+
+This project focuses on predicting house sale prices using **Machine Learning Regression techniques**. The project uses the **House Prices: Advanced Regression Techniques** dataset from Kaggle.
+
+The notebook covers the complete machine learning workflow, including data collection, exploratory data analysis (EDA), data preprocessing, feature preparation, model training, and evaluation.
+
+The main objective is to understand how different features of a house can influence its **Sale Price** and build a model capable of predicting house prices accurately.
+
+---
+
+## 🎯 Objectives
+
+* Analyze the factors affecting house prices.
+* Perform exploratory data analysis on the dataset.
+* Handle missing values and categorical features.
+* Prepare the data for machine learning.
+* Train regression models for house price prediction.
+* Evaluate model performance using standard regression metrics.
+* Compare different machine learning approaches.
+
+---
+
+## 📊 Dataset
+
+The project uses the **House Prices: Advanced Regression Techniques** dataset from Kaggle.
+
+The dataset contains information about residential properties, including features such as:
+
+* Lot Area
+* Overall Quality
+* Year Built
+* Total Basement Area
+* Living Area
+* Garage Area
+* Number of Rooms
+* Neighborhood
+* Sale Condition
+* Sale Type
+* And many other property-related features
+
+### Dataset Size
+
+* **Training Dataset:** 1,460 records and 80 columns
+* **Testing Dataset:** 1,459 records and 79 columns
+* **Target Variable:** `SalePrice`
+
+The dataset is downloaded directly using the **Kaggle API**.
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+The project performs exploratory analysis of the target variable `SalePrice`.
+
+### EDA includes:
+
+* Distribution analysis of house prices
+* SalePrice skewness analysis
+* Examination of dataset structure
+* Understanding numerical and categorical variables
+* Visualization of important patterns in the data
+
+EDA helps understand the distribution and characteristics of house prices before applying machine learning models.
+
+---
+
+## ⚙️ Data Preprocessing
+
+The project uses several preprocessing and data preparation techniques, including:
+
+* Loading data using **Pandas**
+* Handling numerical and categorical features
+* Feature encoding using `LabelEncoder`
+* Feature scaling using `StandardScaler`
+* Splitting data into training and validation sets
+* Preparing features for regression models
+
+---
+
+## 🤖 Machine Learning Models
+
+The project uses regression-based machine learning algorithms, including:
+
+### 1. Linear Regression
+
+Linear Regression is used as a baseline regression model to understand the relationship between input features and house prices.
+
+### 2. XGBoost Regression
+
+**XGBoost** is used as a more powerful gradient boosting model for predicting house prices and capturing complex relationships between different features.
+
+---
+
+## 📏 Model Evaluation
+
+The models are evaluated using common regression metrics:
+
+* **Mean Absolute Error (MAE)**
+* **Mean Squared Error (MSE)**
+* **R² Score**
+
+These metrics help measure how accurately the models predict house sale prices.
+
+---
+
+## 🛠️ Technologies & Libraries
+
+### Programming Language
+
+* Python
+
+### Libraries
+
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* SciPy
+* Scikit-learn
+* XGBoost
+
+### Tools
+
+* Google Colab
+* Kaggle API
+* Jupyter Notebook
+
+---
+
+## 📁 Project Structure
+
+```text
+House-Price-Prediction/
+│
+├── project 3.ipynb
+├── train.csv
+├── test.csv
+├── data_description.txt
+├── sample_submission.csv
+└── README.md
+```
+
+> **Note:** Kaggle API credentials such as `kaggle.json` should not be uploaded to GitHub.
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Kaggle Dataset
+      ↓
+Data Loading
+      ↓
+Data Exploration
+      ↓
+Exploratory Data Analysis
+      ↓
+Data Preprocessing
+      ↓
+Feature Encoding & Scaling
+      ↓
+Train-Test Split
+      ↓
+Model Training
+      ↓
+Linear Regression / XGBoost
+      ↓
+Model Evaluation
+      ↓
+House Price Prediction
+```
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/House-Price-Prediction.git
+```
+
+### 2. Open the notebook
+
+Open:
+
+```text
+project 3.ipynb
+```
+
+using **Google Colab** or **Jupyter Notebook**.
+
+### 3. Configure Kaggle API
+
+The notebook uses the Kaggle API to download the dataset.
+
+Upload your own `kaggle.json` file when prompted.
+
+### 4. Run the notebook
+
+Execute the cells sequentially to:
+
+1. Download the dataset
+2. Load the training and testing data
+3. Perform EDA
+4. Preprocess the data
+5. Train regression models
+6. Evaluate model performance
+7. Generate predictions
+
+---
+
+## 📌 Key Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+* Exploratory Data Analysis
+* Regression problems
+* Data preprocessing
+* Feature encoding
+* Feature scaling
+* Machine learning model training
+* Model evaluation
+* Working with Kaggle datasets
+* Using XGBoost for regression
+* Visualizing data using Matplotlib and Seaborn
+
+---
+
+## 🔮 Future Improvements
+
+The project can be further improved by:
+
+* Applying advanced feature engineering
+* Handling missing values using more sophisticated techniques
+* Applying feature selection
+* Using cross-validation
+* Performing hyperparameter tuning
+* Testing additional regression algorithms
+* Using ensemble and stacking techniques
+* Improving prediction accuracy
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Java Development, Data Analytics, Machine Learning, and Software Engineering**.
+
+---
+
+## ⭐ Acknowledgements
+
+* Dataset: **Kaggle – House Prices: Advanced Regression Techniques**
+* Libraries: Python open-source data science and machine learning ecosystem
+
+
 
