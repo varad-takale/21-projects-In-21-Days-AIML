@@ -614,5 +614,98 @@ Interested in **Java Development, Data Analytics, Machine Learning, and Software
 * Dataset: **Kaggle – House Prices: Advanced Regression Techniques**
 * Libraries: Python open-source data science and machine learning ecosystem
 
+#  Project 4:🩺 Heart Disease Prediction using Machine Learning
+
+## 📌 Project Overview
+
+This project focuses on predicting the presence and severity of heart disease using **Machine Learning Classification techniques**.
+
+The project uses the **Heart Disease UCI dataset** and follows a complete machine learning workflow, including data loading, exploratory data analysis (EDA), data preprocessing, feature transformation, model training, and model evaluation.
+
+Multiple classification algorithms are implemented and compared to understand their performance on the heart disease dataset.
+
+---
+
+## 🎯 Objectives
+
+* Analyze the heart disease dataset.
+* Perform Exploratory Data Analysis (EDA).
+* Identify relationships between important health-related features and heart disease.
+* Handle missing values and categorical variables.
+* Transform numerical and categorical features.
+* Train multiple classification models.
+* Evaluate and compare model performance.
+* Analyze predictions using a confusion matrix.
+* Understand feature importance.
+
+---
+
+## 📊 Dataset
+
+The project uses the **Heart Disease UCI dataset**, downloaded using `kagglehub`.
+
+The target variable is:
+
+```text
+num
+```
+
+The target represents the heart disease classification.
+
+The dataset contains medical and demographic features such as:
+
+* Age
+* Sex
+* Chest Pain Type (`cp`)
+* Resting Blood Pressure (`trestbps`)
+* Cholesterol (`chol`)
+* Fasting Blood Sugar (`fbs`)
+* Resting ECG (`restecg`)
+* Maximum Heart Rate (`thalach`)
+* Exercise-Induced Angina (`exang`)
+* ST Depression (`oldpeak`)
+* Slope
+* Number of Major Vessels (`ca`)
+* Thalassemia (`thal`)
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+The project performs EDA to understand the dataset and identify patterns related to heart disease.
+
+### EDA includes:
+
+* Dataset structure and information
+* Descriptive statistics
+* Missing-value analysis
+* Target variable distribution
+* Age distribution by target
+* Maximum heart rate comparison
+* Chest pain type analysis
+* Sex distribution by target
+* Correlation analysis using a heatmap
+
+These visualizations help identify relationships between patient characteristics and heart disease outcomes.
+
+---
+
+## ⚙️ Data Preprocessing
+
+The following preprocessing techniques are implemented:
+
+### Numerical Features
+
+* Missing values are handled using **mean imputation**.
+* Numerical features are standardized using **StandardScaler**.
+
+### Categorical Features
+
+* Missing categorical values are handled where required.
+* Categorical variables are converted using **OneHotEncoder**.
+* `drop='first'` is used to avoid redundant encoded columns.
+* `handle_unknown='ig_
+
+
 
 
