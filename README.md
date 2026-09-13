@@ -708,4 +708,226 @@ The following preprocessing techniques are implemented:
 
 
 
+# project 5 : # 🛍️ Customer Segmentation with Clustering
+
+## 📌 Project Overview
+
+This project focuses on **Customer Segmentation using Machine Learning clustering techniques**. The objective is to analyze customer characteristics and identify meaningful groups of customers based on their **age, annual income, and spending score**.
+
+Customer segmentation can help businesses understand different customer behaviors and create more targeted marketing strategies, personalized offers, and better customer experiences.
+
+The project uses the **Mall Customers dataset**, containing information about 200 customers, and applies Exploratory Data Analysis (EDA), data preprocessing, visualization, and clustering techniques.
+
+---
+
+## 🎯 Objectives
+
+* Analyze customer demographic and spending information.
+* Perform Exploratory Data Analysis (EDA).
+* Understand the distribution of customer features.
+* Identify relationships between income and spending behavior.
+* Preprocess and scale numerical features.
+* Apply clustering techniques to segment customers.
+* Visualize and interpret different customer groups.
+
+---
+
+## 📊 Dataset
+
+The project uses the **Mall Customers dataset**.
+
+### Dataset Features
+
+| Feature                  | Description                           |
+| ------------------------ | ------------------------------------- |
+| `CustomerID`             | Unique customer identifier            |
+| `Gender`                 | Customer gender                       |
+| `Age`                    | Customer age                          |
+| `Annual Income (k$)`     | Annual income in thousands of dollars |
+| `Spending Score (1-100)` | Customer spending score               |
+
+### Dataset Size
+
+* **Rows:** 200
+* **Columns:** 5
+* **Age Range:** 18–70
+* **Annual Income Range:** $15k–$137k
+* **Spending Score Range:** 1–99
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+The project performs an in-depth EDA to understand the dataset.
+
+### EDA includes:
+
+* Dataset information and data types
+* Descriptive statistical analysis
+* Feature distributions
+* Age distribution analysis
+* Annual income distribution
+* Spending score distribution
+* Gender-based feature visualization
+* Relationship analysis between customer attributes
+
+`CustomerID` is removed before analysis because it is an identifier and does not provide useful information for customer clustering.
+
+---
+
+## 🤖 Machine Learning Techniques
+
+The project uses clustering techniques to discover groups of customers without predefined labels.
+
+### K-Means Clustering
+
+**K-Means Clustering** is used to divide customers into groups based on similarities between their features.
+
+The project uses:
+
+* `KMeans`
+* `StandardScaler`
+
+Feature scaling is performed so that variables with different numerical ranges do not disproportionately influence the clustering algorithm.
+
+### Hierarchical Clustering
+
+The project also uses hierarchical clustering tools for analyzing the structure and relationships between customer groups.
+
+---
+
+## 🛠️ Technologies & Libraries
+
+The project is developed in **Python** using Google Colab/Jupyter Notebook.
+
+### Libraries Used
+
+* 🐼 Pandas
+* 🔢 NumPy
+* 📊 Matplotlib
+* 🎨 Seaborn
+* 📈 Plotly
+* 🌳 SciPy
+* 🤖 Scikit-learn
+
+---
+
+## 📁 Project Structure
+
+```text
+Customer-Segmentation/
+│
+├── Project 5.ipynb
+├── Mall_Customers.csv
+└── README.md
+```
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+```
+
+### 2. Open the Notebook
+
+Open:
+
+```text
+Project 5.ipynb
+```
+
+using **Jupyter Notebook** or **Google Colab**.
+
+### 3. Install Required Libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn plotly scipy scikit-learn
+```
+
+### 4. Run the Notebook
+
+Execute the cells sequentially to perform:
+
+```text
+Data Loading
+     ↓
+Data Exploration
+     ↓
+Data Cleaning
+     ↓
+Exploratory Data Analysis
+     ↓
+Feature Scaling
+     ↓
+Clustering
+     ↓
+Visualization
+     ↓
+Customer Segmentation
+```
+
+---
+
+## 💡 Key Learning Outcomes
+
+Through this project, I explored:
+
+* Data loading and preprocessing using Pandas
+* Exploratory Data Analysis
+* Statistical analysis
+* Data visualization
+* Feature scaling
+* Unsupervised Machine Learning
+* K-Means clustering
+* Hierarchical clustering
+* Customer segmentation
+* Interpretation of clustering results
+
+---
+
+## 📌 Applications
+
+Customer segmentation can be useful for:
+
+* 🎯 Targeted marketing
+* 🛒 Personalized product recommendations
+* 💰 Customer value analysis
+* 📢 Marketing campaign optimization
+* 🤝 Customer relationship management
+* 📊 Business decision-making
+
+---
+
+## 🔮 Future Improvements
+
+Possible improvements to this project include:
+
+* Experimenting with different clustering algorithms.
+* Comparing K-Means with hierarchical clustering results.
+* Using additional customer features.
+* Performing cluster profiling in greater detail.
+* Developing an interactive customer segmentation dashboard.
+* Deploying the model as a web application.
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Data Analytics, Machine Learning, Java, Spring Boot, and Software Development**.
+
+---
+
+## ⭐ Project
+
+If you find this project useful or interesting, feel free to ⭐ the repository!
+
+
+
 
