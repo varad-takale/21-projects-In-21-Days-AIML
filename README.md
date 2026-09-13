@@ -708,7 +708,7 @@ The following preprocessing techniques are implemented:
 
 
 
-# project 5 : # 🛍️ Customer Segmentation with Clustering
+# project 5 : 🛍️ Customer Segmentation with Clustering
 
 ## 📌 Project Overview
 
