@@ -929,5 +929,287 @@ Interested in **Data Analytics, Machine Learning, Java, Spring Boot, and Softwar
 If you find this project useful or interesting, feel free to ⭐ the repository!
 
 
+# Project 6: Time Series Analysis & Forecasting 📈
+
+## 📌 Project Overview
+
+This project focuses on **Time Series Analysis and Forecasting** using monthly airline passenger data from **1949 to 1960**.
+
+The project analyzes historical passenger trends, checks the stationarity of the time series, applies transformations to make the data stationary, and builds **ARIMA and SARIMA models** to forecast future airline passenger numbers.
+
+The project particularly demonstrates how **seasonality and trends** can be handled using time-series forecasting techniques.
+
+---
+
+## 🎯 Objectives
+
+* Analyze monthly airline passenger data.
+* Explore trends and seasonal patterns.
+* Decompose the time series into its components.
+* Test the series for stationarity using the **Augmented Dickey-Fuller (ADF) test**.
+* Transform the data using logarithmic transformation and differencing.
+* Analyze **ACF and PACF** plots for model identification.
+* Build an **ARIMA** forecasting model.
+* Build a **SARIMA** model to handle seasonality.
+* Evaluate the SARIMA model using **RMSE (Root Mean Squared Error)**.
+* Compare forecasted values with actual passenger numbers.
+
+---
+
+## 📊 Dataset
+
+The project uses an airline passenger time-series dataset containing:
+
+* **Time Period:** 1949–1960
+* **Frequency:** Monthly
+* **Rows:** 144
+* **Columns:** 2
+
+### Columns
+
+| Column       | Description                   |
+| ------------ | ----------------------------- |
+| `Month`      | Month and year of observation |
+| `Passengers` | Number of airline passengers  |
+
+The dataset is loaded from the project's GitHub dataset repository.
+
+---
+
+## 🛠️ Technologies & Libraries
+
+The project is implemented in **Python** using:
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Statsmodels
+* Scikit-learn
+
+### Main techniques used
+
+* Time Series Decomposition
+* Augmented Dickey-Fuller (ADF) Test
+* Log Transformation
+* Differencing
+* ACF Analysis
+* PACF Analysis
+* ARIMA
+* SARIMA
+* RMSE Evaluation
+
+---
+
+## 🔍 Project Workflow
+
+### 1. Data Loading and Setup
+
+The required Python libraries are imported and the airline passenger dataset is loaded into a Pandas DataFrame.
+
+The dataset contains monthly passenger observations.
+
+### 2. Exploratory Data Analysis
+
+The passenger data is visualized to understand its overall behavior.
+
+The analysis helps identify:
+
+* Long-term trends
+* Increasing passenger numbers
+* Repeating seasonal patterns
+* Changes in passenger volume over time
+
+The time series is also decomposed using **multiplicative seasonal decomposition**.
+
+### 3. Stationarity Testing
+
+The **Augmented Dickey-Fuller (ADF) test** is applied to determine whether the original time series is stationary.
+
+Stationarity is important because ARIMA-based models generally work with stationary series or require appropriate differencing.
+
+### 4. Making the Series Stationary
+
+A logarithmic transformation is applied:
+
+```python
+df_log = np.log(df['Passengers'])
+```
+
+The transformed series is then differenced:
+
+```python
+df_diff = df_log.diff().dropna()
+```
+
+The ADF test is performed again on the transformed and differenced series.
+
+### 5. ACF and PACF Analysis
+
+**Autocorrelation Function (ACF)** and **Partial Autocorrelation Function (PACF)** plots are generated using the stationary series.
+
+These plots help identify appropriate parameters for the ARIMA model.
+
+### 6. ARIMA Model
+
+An ARIMA model with the following configuration is created:
+
+```text
+ARIMA(1, 1, 1)
+```
+
+The dataset is divided into:
+
+* **Training data:** Up to 1958
+* **Testing data:** 1959 onward
+
+The model is then used to forecast the testing period.
+
+### 7. SARIMA Model
+
+Because the dataset contains clear seasonal behavior, a seasonal ARIMA model is built:
+
+```text
+SARIMA(1, 1, 1)(1, 1, 1, 12)
+```
+
+The seasonal period is **12 months**, representing yearly seasonality in monthly passenger data.
+
+### 8. Model Evaluation
+
+The SARIMA predictions are converted back from logarithmic scale using the exponential function.
+
+The model is evaluated using **Root Mean Squared Error (RMSE)**:
+
+```python
+rmse = np.sqrt(mean_squared_error(original_test_data, sarima_predictions))
+```
+
+A final graph compares the actual passenger numbers with the SARIMA forecast.
+
+---
+
+## 📈 Model
+
+### SARIMA Configuration
+
+```text
+Non-seasonal order: (1, 1, 1)
+Seasonal order:     (1, 1, 1, 12)
+```
+
+Where:
+
+* `p = 1` → Autoregressive component
+* `d = 1` → Differencing
+* `q = 1` → Moving average component
+* `P = 1` → Seasonal autoregressive component
+* `D = 1` → Seasonal differencing
+* `Q = 1` → Seasonal moving average component
+* `12` → Monthly seasonal period
+
+---
+
+## 📊 Evaluation Metric
+
+### RMSE — Root Mean Squared Error
+
+RMSE measures the difference between the actual passenger values and the forecasted values.
+
+A lower RMSE indicates that the predictions are closer to the actual observations.
+
+The notebook calculates the final SARIMA RMSE and displays it in the output.
+
+---
+
+## 📁 Project Structure
+
+```text
+Project-6/
+│
+├── project 6.ipynb
+├── README.md
+└── dataset1/
+    └── airline_passenger_timeseries.csv
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd Project-6
+```
+
+### 2. Install the required libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn statsmodels scikit-learn
+```
+
+### 3. Open the Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+```text
+project 6.ipynb
+```
+
+### 4. Run all cells
+
+Run the notebook cells sequentially to perform the complete analysis and generate the forecasts and visualizations.
+
+---
+
+## 🔮 Results
+
+The project successfully demonstrates a complete time-series forecasting workflow:
+
+* Historical airline passenger trends are visualized.
+* Seasonal patterns are identified through decomposition.
+* Stationarity is tested using the ADF test.
+* Log transformation and differencing are applied.
+* ACF and PACF plots are used for model identification.
+* ARIMA and SARIMA forecasting models are constructed.
+* SARIMA is used to account for the **12-month seasonal pattern**.
+* Forecasted values are compared against actual passenger numbers.
+* RMSE is calculated to evaluate forecasting performance.
+
+---
+
+## 💡 Key Learning Outcomes
+
+Through this project, the following concepts are demonstrated:
+
+1. Understanding time-series data.
+2. Identifying trends and seasonality.
+3. Testing stationarity.
+4. Applying logarithmic transformation and differencing.
+5. Understanding ACF and PACF.
+6. Building ARIMA models.
+7. Handling seasonality using SARIMA.
+8. Splitting time-series data into training and testing sets.
+9. Evaluating forecasting models using RMSE.
+10. Visualizing actual vs. predicted values.
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Java Development, Data Analytics, Machine Learning and Software Engineering**.
+
+
+
 
 
