@@ -347,12 +347,7 @@ It demonstrates how Python-based data analysis techniques can be used to transfo
 
 ---
 
-## 👨‍💻 Author
 
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in **Data Analytics, Java Development, and Software Engineering**.
 
 # Project 3:🏠 House Price Prediction using Machine Learning
 
@@ -915,18 +910,7 @@ Possible improvements to this project include:
 
 ---
 
-## 👨‍💻 Author
 
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in **Data Analytics, Machine Learning, Java, Spring Boot, and Software Development**.
-
----
-
-## ⭐ Project
-
-If you find this project useful or interesting, feel free to ⭐ the repository!
 
 
 # Project 6: Time Series Analysis & Forecasting 📈
