@@ -1202,12 +1202,304 @@ Through this project, the following concepts are demonstrated:
 
 ---
 
-## 👨‍💻 Author
+# project 7 : Customer Churn Prediction Using Feature Engineering
 
-**Varad Takale**
+A machine learning project that analyzes customer churn and evaluates how **feature engineering** can improve customer churn prediction.
 
-Computer Engineering Graduate
-Interested in **Java Development, Data Analytics, Machine Learning and Software Engineering**.
+## 📌 Project Overview
+
+Customer churn is an important business problem where companies try to identify customers who are likely to stop using their services.
+
+In this project, the **Telco Customer Churn** dataset is used to build a baseline Logistic Regression model and then improve the feature representation through feature engineering.
+
+The project compares model performance **before and after feature engineering** and uses a Random Forest model to identify important features.
+
+---
+
+## 🎯 Objectives
+
+* Load and understand the Telco Customer Churn dataset.
+* Clean and prepare the data for machine learning.
+* Build a baseline churn prediction model.
+* Perform feature engineering on customer information.
+* Train an enhanced Logistic Regression model.
+* Compare baseline and enhanced model performance.
+* Identify important features using Random Forest.
+
+---
+
+## 📊 Dataset
+
+The project uses the **Telco Customer Churn** dataset.
+
+* **Rows:** 7,043
+* **Columns:** 21
+* **Target variable:** `Churn`
+
+The dataset contains customer information such as:
+
+* Customer demographics
+* Tenure
+* Phone services
+* Internet services
+* Online security
+* Technical support
+* Streaming services
+* Contract type
+* Payment method
+* Monthly charges
+* Total charges
+* Churn status
+
+### Target Distribution
+
+| Churn | Customers |
+| ----- | --------: |
+| No    |     5,174 |
+| Yes   |     1,869 |
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Google Colab / Jupyter Notebook
+
+### Machine Learning Techniques
+
+* Logistic Regression
+* Random Forest Classifier
+* StandardScaler
+* OneHotEncoder
+* ColumnTransformer
+* Pipeline
+* Train-Test Split
+
+---
+
+## 🧹 Data Cleaning
+
+The following preprocessing steps were performed:
+
+1. Loaded the dataset using Pandas.
+2. Converted `TotalCharges` from object/string format to numeric.
+3. Identified **11 missing values** in `TotalCharges`.
+4. Replaced missing `TotalCharges` values with the median.
+5. Converted the `Churn` column into a binary variable:
+
+   * `Yes → 1`
+   * `No → 0`
+
+---
+
+## ⚙️ Feature Engineering
+
+Three main features were created to provide additional information to the model.
+
+### 1. Tenure Group
+
+The original `tenure` feature was divided into customer tenure groups:
+
+* `0-1 Year`
+* `1-2 Years`
+* `2-4 Years`
+* `4-5 Years`
+* `5+ Years`
+
+### 2. Number of Additional Services
+
+A new feature called `num_add_services` counts the number of additional services used by each customer.
+
+The services considered include:
+
+* Online Security
+* Online Backup
+* Device Protection
+* Tech Support
+* Streaming TV
+* Streaming Movies
+
+### 3. Monthly Charge Ratio
+
+A `monthly_charge_ratio` feature was created using:
+
+```text
+MonthlyCharges / (tenure + 1)
+```
+
+The `+1` prevents division by zero for customers with zero tenure.
+
+### Additional Data Transformation
+
+The following categories were simplified:
+
+* `No phone service → No`
+* `No internet service → No`
+
+---
+
+## 🤖 Machine Learning Models
+
+### Model 1 — Baseline Logistic Regression
+
+The first model was trained using the original dataset without the newly engineered features.
+
+Preprocessing included:
+
+* Standard scaling for numerical features
+* One-hot encoding for categorical features
+* Logistic Regression classifier
+
+### Baseline Performance
+
+| Class | Precision | Recall | F1-Score |
+| ----- | --------: | -----: | -------: |
+| 0     |      0.85 |   0.89 |     0.87 |
+| 1     |      0.65 |   0.56 |     0.60 |
+
+**Accuracy: 80%**
+
+---
+
+### Model 2 — Logistic Regression with Feature Engineering
+
+The second Logistic Regression model used the engineered features.
+
+### Enhanced Performance
+
+| Class | Precision | Recall | F1-Score |
+| ----- | --------: | -----: | -------: |
+| 0     |      0.84 |   0.91 |     0.87 |
+| 1     |      0.68 |   0.52 |     0.59 |
+
+**Accuracy: 81%**
+
+---
+
+## 📈 Model Comparison
+
+| Model                                  | Accuracy |
+| -------------------------------------- | -------: |
+| Baseline Logistic Regression           |      80% |
+| Feature-Engineered Logistic Regression |      81% |
+
+The feature-engineered model achieved a **1 percentage-point improvement in accuracy** over the baseline model.
+
+However, the recall for the churn class decreased slightly, showing that accuracy alone is not sufficient for evaluating churn prediction.
+
+---
+
+## 🌲 Feature Importance
+
+A **Random Forest Classifier** was also trained using the engineered dataset.
+
+Feature importance was extracted from the Random Forest model to identify the **Top 15 most important features** influencing churn prediction.
+
+The project visualizes these features using a horizontal bar chart.
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Dataset
+   ↓
+Data Loading
+   ↓
+Data Cleaning
+   ↓
+Exploratory Preparation
+   ↓
+Baseline Model
+   ↓
+Feature Engineering
+   ↓
+Enhanced Model
+   ↓
+Model Comparison
+   ↓
+Random Forest Feature Importance
+   ↓
+Final Conclusion
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+customer-churn-prediction/
+│
+├── project 7.ipynb
+├── WA_Fn-UseC_-Telco-Customer-Churn.csv
+└── README.md
+```
+
+> The dataset is loaded in the notebook from the `dataset1` GitHub repository.
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd customer-churn-prediction
+```
+
+### 2. Install dependencies
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
+
+### 3. Open the notebook
+
+Open:
+
+```text
+project 7.ipynb
+```
+
+using Jupyter Notebook, JupyterLab, or Google Colab.
+
+### 4. Run all cells
+
+Execute the notebook from top to bottom to reproduce the data cleaning, feature engineering, model training, evaluation, and feature-importance analysis.
+
+---
+
+## 💡 Key Takeaways
+
+* Feature engineering can improve the representation of customer behavior for machine learning.
+* The feature-engineered Logistic Regression model improved overall accuracy from **80% to 81%**.
+* Churn prediction should not be evaluated using accuracy alone because the churn and non-churn classes are imbalanced.
+* Random Forest feature importance provides a way to investigate which features contribute most to predictions.
+
+---
+
+## 🚀 Future Improvements
+
+Possible improvements to this project include:
+
+* Hyperparameter tuning
+* Cross-validation
+* Testing additional classification algorithms
+* Handling class imbalance using suitable techniques
+* ROC-AUC and Precision-Recall analysis
+* Threshold optimization
+* Deploying the trained model as a web application
+
+---
+
+
+
 
 
 
