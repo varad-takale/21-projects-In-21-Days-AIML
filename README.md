@@ -755,16 +755,7 @@ The project uses the **Mall Customers dataset**.
 
 The project performs an in-depth EDA to understand the dataset.
 
-### EDA includes:
 
-* Dataset information and data types
-* Descriptive statistical analysis
-* Feature distributions
-* Age distribution analysis
-* Annual income distribution
-* Spending score distribution
-* Gender-based feature visualization
-* Relationship analysis between customer attributes
 
 `CustomerID` is removed before analysis because it is an identifier and does not provide useful information for customer clustering.
 
