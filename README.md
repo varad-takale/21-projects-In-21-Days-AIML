@@ -1482,6 +1482,288 @@ Possible improvements to this project include:
 
 ---
 
+# project 8 - 👕 Fashion-MNIST Image Classification using Deep Learning
+
+A deep learning project that classifies Fashion-MNIST images into 10 different clothing categories using **Artificial Neural Network (ANN)** and **Convolutional Neural Network (CNN)** models.
+
+The project implements and compares three architectures:
+
+* Basic ANN
+* Basic CNN
+* Deeper CNN with Batch Normalization and Dropout
+
+## 📌 Project Overview
+
+The **Fashion-MNIST dataset** contains grayscale images of fashion items. The objective of this project is to build deep learning models that can automatically recognize and classify these images into their respective categories.
+
+The project covers the complete workflow:
+
+**Dataset Loading → Data Preprocessing → Model Building → Model Training → Model Evaluation → Model Comparison**
+
+## 📊 Dataset
+
+The project uses the **Fashion-MNIST dataset** available through TensorFlow/Keras.
+
+Dataset details:
+
+* Training images: **60,000**
+* Testing images: **10,000**
+* Image size: **28 × 28 pixels**
+* Image type: **Grayscale**
+* Number of classes: **10**
+
+The images are normalized by dividing pixel values by `255.0`.
+
+The images are reshaped into:
+
+```text
+(28, 28, 1)
+```
+
+Labels are converted into one-hot encoded vectors containing 10 classes.
+
+## 🏷️ Fashion-MNIST Classes
+
+The 10 classes are:
+
+1. T-shirt/top
+2. Trouser
+3. Pullover
+4. Dress
+5. Coat
+6. Sandal
+7. Shirt
+8. Sneaker
+9. Bag
+10. Ankle boot
+
+## 🛠️ Technologies Used
+
+* Python
+* NumPy
+* Pandas
+* TensorFlow
+* Keras
+* Matplotlib
+* Plotly
+* Scikit-learn
+* Seaborn
+
+## 🧹 Data Preprocessing
+
+The following preprocessing steps are performed:
+
+### 1. Normalization
+
+Pixel values are converted from the range `0–255` to `0–1`.
+
+```python
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+```
+
+### 2. Reshaping
+
+Images are reshaped to include a single grayscale channel:
+
+```python
+(28, 28, 1)
+```
+
+### 3. One-Hot Encoding
+
+The class labels are converted into categorical vectors using:
+
+```python
+keras.utils.to_categorical()
+```
+
+## 🧠 Models
+
+### 1. Basic ANN
+
+The ANN architecture consists of:
+
+```text
+Input Image
+    ↓
+Flatten
+    ↓
+Dense(128, ReLU)
+    ↓
+Dense(64, ReLU)
+    ↓
+Dense(10, Softmax)
+```
+
+Total parameters:
+
+**109,386**
+
+The model uses:
+
+* Optimizer: Adam
+* Loss: Categorical Crossentropy
+* Metric: Accuracy
+
+---
+
+### 2. Basic CNN
+
+The Basic CNN architecture consists of convolutional and pooling layers:
+
+```text
+Input Image
+    ↓
+Conv2D(32)
+    ↓
+MaxPooling2D
+    ↓
+Conv2D(64)
+    ↓
+MaxPooling2D
+    ↓
+Flatten
+    ↓
+Dense(64)
+    ↓
+Dense(10, Softmax)
+```
+
+Total parameters:
+
+**121,930**
+
+The model uses:
+
+* ReLU activation for hidden layers
+* Softmax activation for classification
+* Adam optimizer
+* Categorical Crossentropy loss
+
+---
+
+### 3. Deeper CNN
+
+The deeper CNN adds additional convolutional layers along with **Batch Normalization** and **Dropout** to improve training and reduce overfitting.
+
+```text
+Input Image
+    ↓
+Conv2D(32)
+    ↓
+Batch Normalization
+    ↓
+MaxPooling
+    ↓
+Dropout
+    ↓
+Conv2D(64)
+    ↓
+Batch Normalization
+    ↓
+MaxPooling
+    ↓
+Dropout
+    ↓
+Conv2D(128)
+    ↓
+Batch Normalization
+    ↓
+MaxPooling
+    ↓
+Dropout
+    ↓
+Flatten
+    ↓
+Dense(128)
+    ↓
+Batch Normalization
+    ↓
+Dropout
+    ↓
+Dense(10, Softmax)
+```
+
+Total parameters:
+
+**111,882**
+
+Trainable parameters:
+
+**111,178**
+
+Non-trainable parameters:
+
+**704**
+
+## 🏋️ Model Training
+
+Each model is trained with:
+
+* Maximum epochs: **30**
+* Batch size: **64**
+* Optimizer: **Adam**
+* Loss function: **Categorical Crossentropy**
+
+The project uses:
+
+### Early Stopping
+
+Training monitors validation loss and stops when the validation performance no longer improves.
+
+```python
+EarlyStopping(
+    monitor='val_loss',
+    patience=5,
+    restore_best_weights=True
+)
+```
+
+### Model Checkpoint
+
+The best model weights are saved based on validation loss.
+
+Saved weight files include:
+
+```text
+best_ann_model_weights.weights.h5
+best_basic_cnn_model_weights.weights.h5
+best_deeper_cnn_model_weights.weights.h5
+```
+
+## 📈 Model Evaluation
+
+The models are evaluated using the Fashion-MNIST test dataset.
+
+The project includes:
+
+* Test loss
+* Test accuracy
+* Confusion matrices
+* Training vs validation accuracy
+* Training vs validation loss
+* Model performance comparison
+
+Confusion matrices are generated using:
+
+```python
+from sklearn.metrics import confusion_matrix
+```
+
+Predictions are converted into class labels using `argmax()`.
+
+## 📊 Model Comparison
+
+The notebook compares the three models based on:
+
+| Model      | Architecture                   | Parameters |
+| ---------- | ------------------------------ | ---------: |
+| ANN        | Fully Connected Neural Network |    109,386 |
+| Basic CNN  | 2 Convolutional Blocks         |    121,930 |
+| Deeper CNN | 3 Convolutional Blocks +       |            |
+
+
 
 
 
