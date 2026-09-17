@@ -1755,7 +1755,7 @@ The notebook compares the three models based on:
 | Deeper CNN | 3 Convolutional Blocks +       |            |
 
 
-# project 9 - # 🌸 Transfer Learning with Pre-trained Models on Oxford Flowers 102
+# project 9 - 🌸 Transfer Learning with Pre-trained Models on Oxford Flowers 102
 
 ## 📌 Project Overview
 
@@ -2017,19 +2017,7 @@ Through this project, the following concepts are demonstrated:
 * Classification reports
 * Visualization of predictions
 
----
 
-## 🔮 Future Improvements
-
-Possible improvements include:
-
-* Fine-tuning the pre-trained layers.
-* Applying data augmentation.
-* Experimenting with different learning rates.
-* Increasing training epochs.
-* Using additional pre-trained architectures.
-* Comparing training time and computational requirements.
-* Deploying the best-performing model as a web or mobile application.
 
 ---
 
