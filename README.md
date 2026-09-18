@@ -2018,7 +2018,7 @@ Through this project, the following concepts are demonstrated:
 * Visualization of predictions
 ---
 
-# projrct 10 - # 🎨 Creative AI: Face Generation Using GAN
+# projrct 10 -  🎨 Creative AI: Face Generation Using GAN
 
 This project demonstrates **AI-based face generation using a pretrained Generative Adversarial Network (GAN)**. The notebook loads a pretrained face generator and produces multiple synthetic face images from randomly generated latent vectors.
 
