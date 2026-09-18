@@ -2165,35 +2165,8 @@ GAN-based image generation can be explored for applications such as:
 * Digital art
 * AI research and education
 
-## ⚠️ Notes
 
-* The project uses a **pretrained generator** rather than training a GAN from scratch.
-* Generated images are synthetic and should not be treated as photographs of real individuals.
-* Results can vary because the generator uses randomly generated noise vectors.
-* The notebook was designed to run conveniently in Google Colab.
 
-## 🔮 Future Improvements
-
-Possible improvements include:
-
-* Implementing actual latent-space gender/style manipulation.
-* Adding a user-friendly web interface.
-* Allowing users to control image attributes.
-* Saving generated images automatically.
-* Adding image-quality evaluation.
-* Exploring newer GAN architectures.
-* Comparing different pretrained generative models.
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in **Java Development, AI/ML, Data Analytics, and Generative AI**.
-
----
-
-⭐ If you find this project useful, consider giving the repository a star!
 
 
 
