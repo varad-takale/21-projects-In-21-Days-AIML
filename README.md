@@ -2165,6 +2165,116 @@ GAN-based image generation can be explored for applications such as:
 * Digital art
 * AI research and education
 
+# project 11 - # 🤗 Hugging Face Pipelines Demo
+
+A simple Python project demonstrating the initial setup for working with **Hugging Face Transformers Pipelines**.
+
+## 📌 About the Project
+
+This project is created to explore and demonstrate the use of the **Hugging Face Transformers** library and its `pipeline()` API for working with pre-trained machine learning models.
+
+The notebook currently focuses on installing the required library and importing the tools needed for working with:
+
+* Hugging Face Transformers
+* Image processing
+* HTTP requests
+* Data visualization
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **Hugging Face Transformers**
+* **Pillow (PIL)**
+* **Requests**
+* **Matplotlib**
+* **Google Colab / Jupyter Notebook**
+
+## 📦 Libraries Used
+
+```python
+!pip install transformers
+
+import requests
+from io import BytesIO
+from transformers import pipeline
+from PIL import Image, ImageDraw
+import matplotlib.pyplot as plt
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/hugging-face-pipelines-demo.git
+cd hugging-face-pipelines-demo
+```
+
+### 2. Install Dependencies
+
+Install the Transformers library:
+
+```bash
+pip install transformers
+```
+
+You may also install the supporting libraries:
+
+```bash
+pip install requests pillow matplotlib
+```
+
+### 3. Run the Notebook
+
+Open the notebook using Jupyter:
+
+```bash
+jupyter notebook
+```
+
+Or open it directly in **Google Colab**.
+
+## 📂 Project Structure
+
+```text
+hugging-face-pipelines-demo/
+│
+├── project 11.ipynb
+└── README.md
+```
+
+## 🎯 Purpose
+
+The purpose of this project is to build familiarity with the Hugging Face Transformers ecosystem and understand how the `pipeline()` interface can be used as a starting point for working with pre-trained machine learning models.
+
+## 🔮 Future Scope
+
+The project can be extended by implementing different Hugging Face pipelines, such as:
+
+* Text classification
+* Sentiment analysis
+* Text generation
+* Image classification
+* Object detection
+* Question answering
+* Summarization
+* Named Entity Recognition (NER)
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+
+### Skills & Interests
+
+`Java` • `Python` • `SQL` • `Machine Learning` • `AI` • `Spring Boot`
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star!
+
+
 
 
 
