@@ -2165,7 +2165,7 @@ GAN-based image generation can be explored for applications such as:
 * Digital art
 * AI research and education
 
-# project 11 - # 🤗 Hugging Face Pipelines Demo
+# project 11 - 🤗 Hugging Face Pipelines Demo
 
 A simple Python project demonstrating the initial setup for working with **Hugging Face Transformers Pipelines**.
 
