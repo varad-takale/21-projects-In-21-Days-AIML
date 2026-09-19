@@ -2243,38 +2243,6 @@ hugging-face-pipelines-demo/
 └── README.md
 ```
 
-## 🎯 Purpose
-
-The purpose of this project is to build familiarity with the Hugging Face Transformers ecosystem and understand how the `pipeline()` interface can be used as a starting point for working with pre-trained machine learning models.
-
-## 🔮 Future Scope
-
-The project can be extended by implementing different Hugging Face pipelines, such as:
-
-* Text classification
-* Sentiment analysis
-* Text generation
-* Image classification
-* Object detection
-* Question answering
-* Summarization
-* Named Entity Recognition (NER)
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-
-### Skills & Interests
-
-`Java` • `Python` • `SQL` • `Machine Learning` • `AI` • `Spring Boot`
-
----
-
-⭐ If you find this project useful, consider giving the repository a star!
-
-
 
 
 
