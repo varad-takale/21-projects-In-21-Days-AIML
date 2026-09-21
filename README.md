@@ -2243,7 +2243,7 @@ hugging-face-pipelines-demo/
 └── README.md
 ```
 
-# project 12 - # 📈 NIFTY 50 High Price Prediction using Machine Learning
+# project 12 - 📈 NIFTY 50 High Price Prediction using Machine Learning
 
 A machine learning project focused on predicting the **High price of the NIFTY 50 index** using historical market data and evaluating different models across multiple time windows.
 
