@@ -2375,35 +2375,7 @@ nifty50-price-prediction/
 └── README.md
 ```
 
-## ⚠️ Disclaimer
 
-This project is intended for **educational and research purposes**. The model results should not be considered financial advice or a guarantee of future stock-market performance.
-
-## 🔮 Future Improvements
-
-Possible extensions include:
-
-* Adding more historical market features.
-* Testing additional machine learning models.
-* Hyperparameter tuning.
-* Feature engineering.
-* Using additional technical indicators.
-* Improving the GRU architecture.
-* Comparing additional forecasting approaches.
-* Testing the models on more recent unseen market data.
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-
-**Interests:**
-`Python` • `Machine Learning` • `Data Analysis` • `Java` • `SQL`
-
----
-
-⭐ If you found this project useful, consider giving the repository a star!
 
 
 
