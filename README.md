@@ -2243,6 +2243,169 @@ hugging-face-pipelines-demo/
 └── README.md
 ```
 
+# project 12 - # 📈 NIFTY 50 High Price Prediction using Machine Learning
+
+A machine learning project focused on predicting the **High price of the NIFTY 50 index** using historical market data and evaluating different models across multiple time windows.
+
+## 📌 About the Project
+
+This project explores machine learning techniques for predicting the future **High price of NIFTY 50**.
+
+The analysis evaluates models using different prediction time windows:
+
+* **30 days**
+* **60 days**
+* **90 days**
+
+The models are evaluated using:
+
+* **MAE (Mean Absolute Error)**
+* **RMSE (Root Mean Squared Error)**
+
+The project compares model performance to understand how the prediction results change across different time windows.
+
+## 🎯 Objectives
+
+* Analyze historical NIFTY 50 data.
+* Prepare data for machine learning.
+* Create different prediction time windows.
+* Train machine learning/deep learning models.
+* Compare model performance using MAE and RMSE.
+* Analyze the effect of different time windows on prediction accuracy.
+
+## 🤖 Models Used
+
+The project evaluates multiple models, including:
+
+* **K-Nearest Neighbors (KNN)**
+* **GRU (Gated Recurrent Unit)**
+
+These models are compared based on their performance on the test dataset.
+
+## 📊 Evaluation Metrics
+
+### Mean Absolute Error (MAE)
+
+MAE measures the average absolute difference between the actual and predicted values.
+
+```text
+MAE = Average(|Actual - Predicted|)
+```
+
+Lower MAE indicates smaller prediction errors.
+
+### Root Mean Squared Error (RMSE)
+
+RMSE measures the square root of the average squared prediction errors.
+
+```text
+RMSE = √(Average((Actual - Predicted)²))
+```
+
+Lower RMSE indicates better prediction performance.
+
+## 📋 Results
+
+### Best Model Based on Test MAE
+
+| Model | Time Window | Train MAE | Train RMSE | Test MAE | Test RMSE |
+| ----- | ----------: | --------: | ---------: | -------: | --------: |
+| KNN   |     30 Days |   46.0313 |    73.9860 |  63.0793 |  100.9408 |
+| KNN   |     60 Days |   40.5229 |    63.9015 |  57.7650 |   93.6251 |
+| KNN   |     90 Days |   39.5943 |    62.9793 |  50.4311 |   78.6860 |
+
+### Best Model Based on Test RMSE
+
+| Model | Time Window | Train MAE | Train RMSE | Test MAE | Test RMSE |
+| ----- | ----------: | --------: | ---------: | -------: | --------: |
+| GRU   |     30 Days |   65.8270 |    96.6211 |  67.5349 |  100.2590 |
+| KNN   |     60 Days |   40.5229 |    63.9015 |  57.7650 |   93.6251 |
+| KNN   |     90 Days |   39.5943 |    62.9793 |  50.4311 |   78.6860 |
+
+## 🔍 Key Observations
+
+* For the **60-day and 90-day time windows**, KNN achieved the best performance according to both Test MAE and Test RMSE in the notebook's evaluation.
+* For the **30-day window**, KNN produced the lowest Test MAE, while GRU produced the lowest Test RMSE.
+* The KNN results showed lower MAE and RMSE as the time window increased from 30 to 90 days.
+* The project demonstrates how different models and prediction windows can produce different results when forecasting market prices.
+
+## 🛠️ Technologies & Libraries
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Matplotlib**
+* **Scikit-learn**
+* **TensorFlow / Keras**
+* **Google Colab / Jupyter Notebook**
+
+## 🚀 How to Run
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/nifty50-price-prediction.git
+cd nifty50-price-prediction
+```
+
+### 2. Install Required Libraries
+
+```bash
+pip install pandas numpy matplotlib scikit-learn tensorflow
+```
+
+### 3. Open the Notebook
+
+Open the notebook using:
+
+* Google Colab
+* Jupyter Notebook
+* JupyterLab
+
+### 4. Run the Cells
+
+Run the notebook cells sequentially to reproduce the data processing, model training, evaluation, and results.
+
+## 📂 Project Structure
+
+```text
+nifty50-price-prediction/
+│
+├── project_12.ipynb
+└── README.md
+```
+
+## ⚠️ Disclaimer
+
+This project is intended for **educational and research purposes**. The model results should not be considered financial advice or a guarantee of future stock-market performance.
+
+## 🔮 Future Improvements
+
+Possible extensions include:
+
+* Adding more historical market features.
+* Testing additional machine learning models.
+* Hyperparameter tuning.
+* Feature engineering.
+* Using additional technical indicators.
+* Improving the GRU architecture.
+* Comparing additional forecasting approaches.
+* Testing the models on more recent unseen market data.
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+
+**Interests:**
+`Python` • `Machine Learning` • `Data Analysis` • `Java` • `SQL`
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star!
+
+
 
 
 
