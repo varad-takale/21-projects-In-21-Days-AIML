@@ -2551,9 +2551,8 @@ from keras.layers import MaxPooling2D, GlobalMaxPool2D
 from keras.layers import concatenate
 ```
 
-This makes the code more compatible with current Keras versions.
 
----
+
 
 
 
