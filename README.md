@@ -2374,6 +2374,220 @@ nifty50-price-prediction/
 ├── project_12.ipynb
 └── README.md
 ```
+# project 13 - # 🖼️ Image Super-Resolution using U-Net
+
+A deep learning project that uses a **U-Net architecture** to perform image super-resolution. The model takes a low-resolution **64×64 RGB image** as input and generates a higher-resolution **128×128 RGB image**.
+
+## 📌 Project Overview
+
+Image super-resolution is the process of enhancing a low-resolution image to produce a higher-resolution version with improved visual quality.
+
+In this project, a **U-Net encoder-decoder architecture with skip connections** is used to learn image features and reconstruct higher-resolution images.
+
+### Input
+
+**64 × 64 × 3** Low-Resolution Image
+
+### Output
+
+**128 × 128 × 3** Super-Resolved Image
+
+---
+
+## 🧠 Model Architecture
+
+The project uses a **U-Net-based architecture** consisting of:
+
+* **Encoder** – extracts important features from the input image.
+* **Bottleneck** – captures deeper and more abstract image features.
+* **Decoder** – reconstructs the image at a higher resolution.
+* **Skip Connections** – transfer useful spatial information from the encoder to the decoder.
+
+This architecture helps preserve both local details and broader image features during reconstruction.
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* TensorFlow
+* Keras
+* OpenCV
+* NumPy
+* Matplotlib
+* Deep Learning
+* Convolutional Neural Networks
+* U-Net Architecture
+
+---
+
+## 📂 Project Structure
+
+```text
+Image-Super-Resolution-U-Net/
+│
+├── project 13.ipynb
+├── README.md
+└── img.png
+```
+
+---
+
+## ⚙️ Workflow
+
+```text
+Low-Resolution Image
+        │
+        ▼
+   U-Net Encoder
+        │
+        ▼
+    Bottleneck
+        │
+        ▼
+   U-Net Decoder
+        │
+        ▼
+  Skip Connections
+        │
+        ▼
+High-Resolution Image
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd Image-Super-Resolution-U-Net
+```
+
+### 2. Install dependencies
+
+```bash
+pip install tensorflow keras opencv-python numpy matplotlib
+```
+
+### 3. Open the notebook
+
+Run:
+
+```bash
+jupyter notebook
+```
+
+Then open:
+
+```text
+project 13.ipynb
+```
+
+You can also run the notebook directly using **Google Colab**.
+
+---
+
+## 📊 Input and Output
+
+The model is designed for the following image dimensions:
+
+| Parameter         | Value                  |
+| ----------------- | ---------------------- |
+| Input Resolution  | 64 × 64                |
+| Output Resolution | 128 × 128              |
+| Channels          | 3 (RGB)                |
+| Model             | U-Net                  |
+| Task              | Image Super-Resolution |
+
+---
+
+## ✨ Key Features
+
+* Converts low-resolution images into higher-resolution images.
+* Uses a U-Net encoder-decoder architecture.
+* Uses skip connections to preserve spatial information.
+* Uses convolutional layers for image feature extraction.
+* Supports RGB images.
+* Implemented using TensorFlow/Keras.
+
+---
+
+## 🎯 Applications
+
+Image super-resolution can be useful in areas such as:
+
+* 📷 Image enhancement
+* 🛰️ Satellite imagery
+* 🏥 Medical imaging
+* 👁️ Computer vision
+* 📹 Video enhancement
+* 🔍 Image restoration
+* 📱 Low-resolution photo enhancement
+
+---
+
+## ⚠️ Current Notebook Note
+
+The notebook currently contains an import compatibility issue with newer Keras versions:
+
+```python
+from keras.layers.convolutional import Conv2D, Conv2DTranspose
+```
+
+The older module path may produce:
+
+```text
+ModuleNotFoundError:
+No module named 'keras.layers.convolutional'
+```
+
+The imports can be updated to the modern Keras format:
+
+```python
+from keras.layers import Conv2D, Conv2DTranspose
+from keras.layers import MaxPooling2D, GlobalMaxPool2D
+from keras.layers import concatenate
+```
+
+This makes the code more compatible with current Keras versions.
+
+---
+
+## 📚 Learning Outcomes
+
+Through this project, you can learn:
+
+* Basics of image super-resolution
+* U-Net architecture
+* Encoder-decoder neural networks
+* Skip connections
+* Image preprocessing
+* Convolutional neural networks
+* TensorFlow/Keras model development
+* Image visualization using Matplotlib and OpenCV
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+
+### 🔗 Connect with Me
+
+* GitHub: [Add your GitHub profile]
+* LinkedIn: [Add your LinkedIn profile]
+
+---
+
+## ⭐ Acknowledgment
+
+This project was developed for learning and experimentation with **deep learning, U-Net architectures, and image enhancement**.
+
+If you find this project useful, consider giving the repository a ⭐.
 
 
 
