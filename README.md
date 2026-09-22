@@ -2555,39 +2555,7 @@ This makes the code more compatible with current Keras versions.
 
 ---
 
-## 📚 Learning Outcomes
 
-Through this project, you can learn:
-
-* Basics of image super-resolution
-* U-Net architecture
-* Encoder-decoder neural networks
-* Skip connections
-* Image preprocessing
-* Convolutional neural networks
-* TensorFlow/Keras model development
-* Image visualization using Matplotlib and OpenCV
-
----
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-
-### 🔗 Connect with Me
-
-* GitHub: [Add your GitHub profile]
-* LinkedIn: [Add your LinkedIn profile]
-
----
-
-## ⭐ Acknowledgment
-
-This project was developed for learning and experimentation with **deep learning, U-Net architectures, and image enhancement**.
-
-If you find this project useful, consider giving the repository a ⭐.
 
 
 
