@@ -2374,7 +2374,7 @@ nifty50-price-prediction/
 ├── project_12.ipynb
 └── README.md
 ```
-# project 13 - # 🖼️ Image Super-Resolution using U-Net
+# project 13 -  🖼️ Image Super-Resolution using U-Net
 
 A deep learning project that uses a **U-Net architecture** to perform image super-resolution. The model takes a low-resolution **64×64 RGB image** as input and generates a higher-resolution **128×128 RGB image**.
 
