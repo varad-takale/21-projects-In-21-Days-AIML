@@ -2553,6 +2553,177 @@ from keras.layers import concatenate
 
 
 
+# project 14 - # GPT-2 Python Coding Question Assistant
+
+A Python-based NLP project that uses a pre-trained **GPT-2 language model** to identify Python coding-related questions and generate responses for them. Non-coding questions are filtered out and receive a predefined response.
+
+## 📌 Project Overview
+
+This project demonstrates how a pre-trained GPT-2 model can be combined with a simple keyword-based filtering mechanism to create a basic Python coding assistant.
+
+The system:
+
+* Loads the pre-trained GPT-2 model and tokenizer.
+* Detects whether a user's prompt is related to Python programming.
+* Generates a response using GPT-2 for coding-related prompts.
+* Returns a predefined message for non-coding questions.
+* Tests the system using different coding and non-coding prompts.
+
+## 🎯 Objectives
+
+* Understand how to load and use a pre-trained GPT-2 model.
+* Implement text classification using keyword-based filtering.
+* Generate text responses using Hugging Face Transformers.
+* Restrict the assistant to Python programming-related questions.
+* Evaluate the behavior using different test prompts.
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **PyTorch**
+* **Hugging Face Transformers**
+* **GPT-2**
+* **Jupyter Notebook**
+
+## 📂 Project Structure
+
+```text
+GPT-2-Python-Coding-Assistant/
+│
+├── project 14.ipynb
+└── README.md
+```
+
+## ⚙️ Installation
+
+Install the required Python libraries:
+
+```bash
+pip install transformers torch
+```
+
+## 🚀 How It Works
+
+The project follows these steps:
+
+### 1. Load GPT-2
+
+The project loads the pre-trained GPT-2 model and tokenizer using Hugging Face Transformers.
+
+```python
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+model = GPT2LMHeadModel.from_pretrained("gpt2")
+```
+
+### 2. Detect Python Coding Questions
+
+A keyword-based function checks whether the prompt appears to be related to Python programming.
+
+Some of the keywords include:
+
+```text
+python
+code
+function
+class
+import
+def
+loop
+list
+dictionary
+error
+implement
+write a script
+how to
+```
+
+### 3. Generate the Response
+
+If the prompt is identified as a coding question, GPT-2 generates a response.
+
+```python
+response = generate_coding_response(prompt, tokenizer, model)
+```
+
+### 4. Handle Non-Coding Questions
+
+For questions outside the intended scope, the system returns:
+
+```text
+I can only answer Python coding questions. Please ask a relevant question.
+```
+
+## 🧪 Test Cases
+
+The notebook tests the assistant using prompts such as:
+
+```text
+Write a Python function to reverse a string.
+How to sort a list in Python?
+Implement a simple class in Python.
+Tell me a story about a cat.
+What is the capital of France?
+What is the weather like today?
+```
+
+The coding-related prompts are passed to GPT-2, while non-coding questions are filtered.
+
+## 📊 Results
+
+The filtering mechanism successfully identifies many non-coding questions and returns the predefined message.
+
+For coding-related questions, the GPT-2 model attempts to generate an appropriate response.
+
+Because the project uses the **base GPT-2 model without coding-specific fine-tuning**, the generated programming responses may not always be accurate or high quality.
+
+## 💡 Key Learnings
+
+Through this project, I learned:
+
+* How to use Hugging Face Transformers.
+* How to load a pre-trained language model.
+* How tokenization works with GPT-2.
+* How to generate text using PyTorch.
+* How simple keyword-based text filtering can be implemented.
+* How to test an NLP application with multiple inputs.
+
+## 🔮 Future Improvements
+
+The project can be improved by:
+
+* Replacing keyword filtering with a trained text classifier.
+* Fine-tuning GPT-2 on Python programming datasets.
+* Adding better prompt validation.
+* Using a coding-specialized language model.
+* Adding a web interface using Flask, FastAPI, or Streamlit.
+* Adding conversation history.
+* Improving response generation and error handling.
+* Evaluating the model using coding-specific benchmarks.
+
+## ⚠️ Limitations
+
+* The question filtering mechanism is keyword-based.
+* Some prompts may be incorrectly classified.
+* GPT-2 is a general-purpose language model and is not specifically trained for programming.
+* Generated code may require verification and debugging.
+* The model can require significant memory depending on the environment.
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Java, Spring Boot, Software Engineering, AI/ML and Data Science**.
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star!
+
+
+
+
 
 
 
