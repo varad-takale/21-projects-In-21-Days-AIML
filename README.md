@@ -2553,7 +2553,7 @@ from keras.layers import concatenate
 
 
 
-# project 14 - # GPT-2 Python Coding Question Assistant
+# project 14 - GPT-2 Python Coding Question Assistant
 
 A Python-based NLP project that uses a pre-trained **GPT-2 language model** to identify Python coding-related questions and generate responses for them. Non-coding questions are filtered out and receive a predefined response.
 
