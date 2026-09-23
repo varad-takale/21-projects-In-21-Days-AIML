@@ -2689,37 +2689,9 @@ Through this project, I learned:
 * How simple keyword-based text filtering can be implemented.
 * How to test an NLP application with multiple inputs.
 
-## 🔮 Future Improvements
 
-The project can be improved by:
 
-* Replacing keyword filtering with a trained text classifier.
-* Fine-tuning GPT-2 on Python programming datasets.
-* Adding better prompt validation.
-* Using a coding-specialized language model.
-* Adding a web interface using Flask, FastAPI, or Streamlit.
-* Adding conversation history.
-* Improving response generation and error handling.
-* Evaluating the model using coding-specific benchmarks.
 
-## ⚠️ Limitations
-
-* The question filtering mechanism is keyword-based.
-* Some prompts may be incorrectly classified.
-* GPT-2 is a general-purpose language model and is not specifically trained for programming.
-* Generated code may require verification and debugging.
-* The model can require significant memory depending on the environment.
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in **Java, Spring Boot, Software Engineering, AI/ML and Data Science**.
-
----
-
-⭐ If you find this project useful, consider giving the repository a star!
 
 
 
