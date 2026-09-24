@@ -2689,7 +2689,7 @@ Through this project, I learned:
 * How simple keyword-based text filtering can be implemented.
 * How to test an NLP application with multiple inputs.
 
-# project 15 - # Natural Language to SQL using Gemini AI
+# project 15 - Natural Language to SQL using Gemini AI
 
 An AI-powered **Natural Language to SQL (NL2SQL)** project that converts plain-English questions into SQL queries using **Google Gemini 2.5 Flash** and executes them on a **SQLite database**.
 
