@@ -2689,6 +2689,52 @@ Through this project, I learned:
 * How simple keyword-based text filtering can be implemented.
 * How to test an NLP application with multiple inputs.
 
+# project 15 - # Natural Language to SQL using Gemini AI
+
+An AI-powered **Natural Language to SQL (NL2SQL)** project that converts plain-English questions into SQL queries using **Google Gemini 2.5 Flash** and executes them on a **SQLite database**.
+
+## 🚀 Features
+
+* Natural language to SQL conversion
+* Google Gemini AI integration
+* SQLite database
+* Pandas for data analysis
+* Synthetic e-commerce dataset
+* Automatic SQL query generation and execution
+
+## 🛠️ Technologies
+
+* Python
+* Google Gemini API
+* SQLite
+* Pandas
+* Faker
+* Jupyter Notebook / Google Colab
+
+## 💡 Example
+
+**Input:**
+
+```text
+Show me the order count by country
+```
+
+**Sample Result:**
+
+| Country | Order Count |
+| ------- | ----------: |
+| India   |         428 |
+| USA     |         391 |
+| UK      |         276 |
+| Canada  |         215 |
+
+> *Sample values shown for demonstration.*
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate | Java | Spring Boot | SQL | Generative AI
 
 
 
