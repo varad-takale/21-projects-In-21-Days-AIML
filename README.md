@@ -2730,11 +2730,7 @@ Show me the order count by country
 
 > *Sample values shown for demonstration.*
 
-## 👨‍💻 Author
 
-**Varad Takale**
-
-Computer Engineering Graduate | Java | Spring Boot | SQL | Generative AI
 
 
 
