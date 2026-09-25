@@ -3098,28 +3098,8 @@ The project can be further improved by:
 
 ---
 
-## 👨‍💻 Author
 
-**Varad Takale**
 
-Computer Engineering Graduate
-Interested in **Java, Spring Boot, Software Engineering, AI/ML, OCR, and Generative AI**.
-
----
-
-## ⭐ Project Summary
-
-This project demonstrates how traditional **Computer Vision + OCR** techniques can be combined with **Generative AI** to transform unstructured documents into structured and machine-readable information.
-
-```text
-Computer Vision
-      +
-OCR
-      +
-Generative AI
-      ↓
-Structured Document Information
-```
 
 
 
