@@ -2730,6 +2730,396 @@ Show me the order count by country
 
 > *Sample values shown for demonstration.*
 
+# project 16 - # Intelligent Document Information Extraction using OCR and Gemini
+
+## 📌 Project Overview
+
+This project demonstrates an **AI-powered document information extraction pipeline** that combines **OpenCV image preprocessing, Tesseract OCR, and Google Gemini** to convert unstructured document images into structured JSON data.
+
+The project initially works with **receipt images** and extracts important information such as:
+
+* Company name
+* Date
+* Address
+* Total amount
+
+The same document-processing approach is then extended to a **Resume Dataset**, where resume information is extracted into structured fields such as:
+
+* Name
+* Contact information
+* Skills
+* Education
+* Work experience
+* Job category
+
+---
+
+## 🚀 Project Workflow
+
+The overall pipeline follows these steps:
+
+```text
+Document / Resume
+       ↓
+Image Preprocessing
+       ↓
+Grayscale Conversion
+       ↓
+Noise Reduction
+       ↓
+Adaptive Thresholding
+       ↓
+Deskewing
+       ↓
+Tesseract OCR
+       ↓
+Text Extraction
+       ↓
+Google Gemini
+       ↓
+Structured Information Extraction
+       ↓
+JSON Output
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **OpenCV**
+* **NumPy**
+* **Matplotlib**
+* **Pillow**
+* **Tesseract OCR**
+* **Pytesseract**
+* **Google Gemini API**
+* **Google Colab**
+* **Kaggle Dataset**
+* **Pandas**
+* **JSON**
+
+---
+
+## 📂 Dataset
+
+### Receipt Dataset
+
+The project uses the **SROIE 2019 dataset**, which contains receipt images along with:
+
+* Receipt images
+* Bounding-box information
+* Ground-truth entity information
+
+The receipt entity structure contains:
+
+```json
+{
+    "company": "COMPANY_NAME",
+    "date": "DATE",
+    "address": "ADDRESS",
+    "total": "TOTAL"
+}
+```
+
+### Resume Dataset
+
+The project also experiments with the Kaggle Resume Dataset:
+
+**Dataset:** Resume Dataset by Sneha Bhanwal
+
+The dataset contains resume text and category information.
+
+---
+
+## 🔍 Part 1: Receipt Information Extraction
+
+### 1. Image Preprocessing
+
+Receipt images are processed using OpenCV to improve OCR performance.
+
+The preprocessing pipeline includes:
+
+#### Grayscale Conversion
+
+The RGB image is converted into a single-channel grayscale image.
+
+```python
+def convert_to_grayscale(image):
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+```
+
+#### Noise Reduction
+
+Gaussian Blur is applied to reduce image noise.
+
+```python
+def reduce_noise(gray_image):
+    return cv2.GaussianBlur(gray_image, (5, 5), 0)
+```
+
+#### Adaptive Thresholding
+
+Adaptive thresholding converts the image into a binary representation and helps handle uneven lighting.
+
+```python
+def binarize_image(image):
+    return cv2.adaptiveThreshold(
+        image,
+        255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY_INV,
+        11,
+        4
+    )
+```
+
+#### Deskewing
+
+Receipt images can be slightly rotated. The project detects the skew angle and rotates the image to improve OCR accuracy.
+
+---
+
+## 🔤 Part 2: Text Extraction with Tesseract
+
+After preprocessing, **Tesseract OCR** is used to extract text from the images.
+
+Example:
+
+```python
+import pytesseract
+from PIL import Image
+
+text = pytesseract.image_to_string(Image.open(image_path))
+print(text)
+```
+
+The extracted text is saved as `.txt` files for further processing.
+
+---
+
+## 🤖 Part 3: Information Extraction using Gemini
+
+The extracted OCR text and processed image are provided to the **Google Gemini API**.
+
+Gemini is instructed to extract structured information from the receipt.
+
+Example output:
+
+```json
+{
+    "company": "ABC STORE",
+    "date": "12/05/2024",
+    "address": "Example Address",
+    "total": "₹450.00"
+}
+```
+
+The extracted information is then saved as JSON files.
+
+---
+
+## 📄 Part 4: Resume Information Extraction
+
+The project extends the same OCR and information extraction pipeline to resume data.
+
+The Resume Dataset is downloaded using KaggleHub.
+
+```python
+path = kagglehub.dataset_download(
+    "snehaanbhawal/resume-dataset"
+)
+```
+
+The resume text is converted into images so that the same image-processing and OCR pipeline can be demonstrated.
+
+### Resume fields extracted
+
+The Gemini prompt is designed to extract:
+
+```json
+{
+    "name": "",
+    "contact": "",
+    "skills": "",
+    "education": "",
+    "work_experience": "",
+    "category": ""
+}
+```
+
+This converts unstructured resume content into structured information that can be further processed by software applications.
+
+---
+
+## 📁 Project Structure
+
+A suggested GitHub structure for this project is:
+
+```text
+project-16/
+│
+├── project 16.ipynb
+├── README.md
+│
+├── processed_images/
+│
+├── tesseract_output/
+│
+├── json_output/
+│
+├── json_output_resumes/
+│
+└── requirements.txt
+```
+
+Generated folders such as processed images and JSON outputs can be excluded from GitHub if they contain large datasets or generated files.
+
+---
+
+## ⚙️ Installation
+
+Install the required Python packages:
+
+```bash
+pip install opencv-python
+pip install matplotlib
+pip install numpy
+pip install pytesseract
+pip install pillow
+pip install pandas
+pip install kagglehub
+```
+
+For Gemini:
+
+```bash
+pip install google-genai
+```
+
+---
+
+## 🔑 API Configuration
+
+The notebook uses the Google Gemini API.
+
+The API key should **never be hard-coded or uploaded to GitHub**.
+
+For Google Colab, the notebook uses:
+
+```python
+from google.colab import userdata
+
+genai_client = genai.Client(
+    api_key=userdata.get("SECRETS_KEY")
+)
+```
+
+Add your API key securely through Google Colab Secrets.
+
+**Do not commit API keys, passwords, or other credentials to GitHub.**
+
+---
+
+## ▶️ How to Run
+
+### Option 1 — Google Colab
+
+1. Open the notebook in Google Colab.
+2. Upload or connect the required dataset.
+3. Install the required libraries.
+4. Configure the Gemini API key using Colab Secrets.
+5. Run the image preprocessing cells.
+6. Run the Tesseract OCR cells.
+7. Run the Gemini information extraction cells.
+8. Check the generated JSON output.
+
+### Option 2 — Local Environment
+
+1. Clone the repository.
+2. Install Python dependencies.
+3. Install Tesseract OCR on your system.
+4. Configure the required dataset.
+5. Configure your Gemini API key securely.
+6. Open the Jupyter Notebook.
+7. Run the notebook cells sequentially.
+
+---
+
+## 📊 Key Features
+
+* Receipt image preprocessing
+* Grayscale conversion
+* Gaussian noise reduction
+* Adaptive thresholding
+* Image deskewing
+* OCR-based text extraction
+* Structured information extraction
+* Gemini-powered document understanding
+* JSON generation
+* Resume information extraction
+* Resume category extraction
+* Dataset experimentation using Kaggle
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, the following concepts are demonstrated:
+
+* Computer vision fundamentals
+* Image preprocessing
+* OCR
+* Document understanding
+* Prompt-based information extraction
+* Generative AI APIs
+* Structured JSON generation
+* Resume data processing
+* Python automation
+* Dataset handling
+
+---
+
+## 🔮 Future Improvements
+
+The project can be further improved by:
+
+* Processing the complete dataset instead of a limited sample
+* Improving OCR accuracy
+* Adding image resizing and contrast enhancement
+* Improving deskewing logic
+* Adding OCR confidence scores
+* Validating extracted JSON fields
+* Adding automated evaluation against ground-truth data
+* Building a web interface for document upload
+* Supporting invoices and other document types
+* Adding database storage for extracted information
+* Creating a REST API for document processing
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Java, Spring Boot, Software Engineering, AI/ML, OCR, and Generative AI**.
+
+---
+
+## ⭐ Project Summary
+
+This project demonstrates how traditional **Computer Vision + OCR** techniques can be combined with **Generative AI** to transform unstructured documents into structured and machine-readable information.
+
+```text
+Computer Vision
+      +
+OCR
+      +
+Generative AI
+      ↓
+Structured Document Information
+```
 
 
 
