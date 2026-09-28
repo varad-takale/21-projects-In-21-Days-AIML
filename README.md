@@ -3443,25 +3443,6 @@ Through this project, I explored:
 
 ---
 
-## 📓 Notebook
-
-The complete implementation and explanations are available in:
-
-```text
-project 18.ipynb
-```
-
----
-
-## ⭐ Project Purpose
-
-This project was created as a practical exploration of **Generative AI, LangChain, and Retrieval-Augmented Generation**, with a focus on understanding how external knowledge can improve the relevance and reliability of LLM responses.
-
----
-
-## 📄 License
-
-This project is intended for educational and learning purposes.
 
 
 
