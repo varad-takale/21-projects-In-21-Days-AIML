@@ -3098,6 +3098,372 @@ The project can be further improved by:
 
 ---
 
+# program 18 : # Retrieval-Augmented Generation (RAG) with LangChain & Gemini
+
+## 📌 Project Overview
+
+This project explores **Retrieval-Augmented Generation (RAG)** and demonstrates how Large Language Models (LLMs) can be connected to external knowledge sources to generate more relevant and context-aware responses.
+
+The project uses **LangChain**, **Google Gemini**, **Google Generative AI Embeddings**, and **ChromaDB** to build the foundation of a RAG-based application using healthcare/patient review data.
+
+The notebook covers both the concepts behind RAG and practical implementation steps, including document loading, embeddings, vector database creation, prompt templates, chains, and retrieval.
+
+---
+
+## 🧠 What is RAG?
+
+**Retrieval-Augmented Generation (RAG)** combines:
+
+1. **Information Retrieval** – finding relevant information from an external knowledge base.
+2. **Natural Language Generation** – using an LLM to generate an answer based on the retrieved information.
+
+Instead of relying only on the knowledge stored in an LLM, RAG allows the model to retrieve relevant information from external data before generating a response.
+
+### RAG Workflow
+
+```text
+User Query
+    ↓
+Query Embedding
+    ↓
+Similarity Search
+    ↓
+Retrieve Relevant Documents
+    ↓
+Add Retrieved Context to Prompt
+    ↓
+Google Gemini LLM
+    ↓
+Generated Response
+```
+
+---
+
+## 🚀 Technologies Used
+
+* **Python**
+* **LangChain**
+* **Google Gemini**
+* **Google Generative AI**
+* **ChromaDB**
+* **Vector Embeddings**
+* **Google Colab**
+* **CSV Data**
+* **Prompt Templates**
+
+---
+
+## 📚 Topics Covered
+
+### 1. Introduction to LLMs
+
+The notebook introduces Large Language Models and explains why external context and high-quality data are important when building practical AI applications.
+
+### 2. Retrieval-Augmented Generation
+
+The project explains:
+
+* When to use RAG
+* Information retrieval
+* Embedding generation
+* Knowledge bases
+* Vector databases
+* Similarity search
+* Natural language generation
+* Guardrails
+* Challenges of RAG
+
+### 3. LangChain
+
+The practical implementation uses LangChain to work with:
+
+* Chat models
+* Messages
+* Prompt templates
+* Output parsers
+* Chains
+* Document loaders
+* Vector databases
+
+### 4. Google Gemini
+
+Google Gemini is used as the language model through LangChain.
+
+Example model configuration:
+
+```python
+ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",
+    temperature=0
+)
+```
+
+The notebook also demonstrates the use of newer Gemini model configurations.
+
+### 5. Prompt Templates
+
+The project uses `ChatPromptTemplate` and related LangChain components to create structured prompts.
+
+The prompts instruct the model to answer questions using provided context and avoid making up information that is not available in the context.
+
+### 6. Chroma Vector Database
+
+The project uses **ChromaDB** to store document embeddings and perform similarity-based retrieval.
+
+The notebook loads patient reviews from a CSV file and converts them into vector representations.
+
+---
+
+## 🏥 Dataset
+
+The RAG implementation uses a CSV file containing **patient/hospital reviews**.
+
+Expected file:
+
+```text
+reviews.csv
+```
+
+The notebook uses the `review` column as the primary text source.
+
+Example:
+
+```python
+loader = CSVLoader(
+    file_path="/content/reviews.csv",
+    source_column="review"
+)
+```
+
+---
+
+## 🔑 Google API Key
+
+The project requires a Google Generative AI API key.
+
+The notebook is designed for **Google Colab Secrets** and accesses the key using:
+
+```python
+from google.colab import userdata
+
+google_api_key = userdata.get("SECRETS_KEY")
+```
+
+### Important
+
+Do **not** upload your API key directly into GitHub.
+
+Avoid writing:
+
+```python
+google_api_key="YOUR_ACTUAL_API_KEY"
+```
+
+Instead, use environment variables or Google Colab Secrets.
+
+---
+
+## ⚙️ Installation
+
+Install the required packages:
+
+```bash
+pip install --upgrade langchain
+pip install --upgrade langchain-core
+pip install --upgrade langchain-community
+pip install --upgrade langchain-google-genai
+pip install -U langchain-chroma
+```
+
+---
+
+## 🛠️ Implementation
+
+### Initialize Gemini
+
+```python
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+chat_model = ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",
+    temperature=0,
+    google_api_key=userdata.get("SECRETS_KEY")
+)
+```
+
+### Load Documents
+
+```python
+from langchain.document_loaders.csv_loader import CSVLoader
+
+loader = CSVLoader(
+    file_path="/content/reviews.csv",
+    source_column="review"
+)
+
+reviews = loader.load()
+```
+
+### Generate Embeddings
+
+```python
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
+embedding_function = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001",
+    google_api_key=userdata.get("SECRETS_KEY")
+)
+```
+
+### Create Chroma Vector Database
+
+```python
+from langchain_chroma import Chroma
+
+reviews_vector_db = Chroma.from_documents(
+    documents=reviews,
+    embedding=embedding_function,
+    persist_directory="chroma_data"
+)
+```
+
+The notebook processes documents in batches to help manage API rate limits.
+
+---
+
+## 📂 Project Structure
+
+```text
+project/
+│
+├── project 18.ipynb
+├── reviews.csv
+├── chroma_data/
+└── README.md
+```
+
+> `reviews.csv` is required for the document-loading and embedding section of the notebook.
+
+---
+
+## 🔄 RAG Pipeline
+
+The project follows this general pipeline:
+
+```text
+Patient Reviews
+      ↓
+CSVLoader
+      ↓
+Documents
+      ↓
+Google Generative AI Embeddings
+      ↓
+Chroma Vector Database
+      ↓
+Similarity Retrieval
+      ↓
+Relevant Context
+      ↓
+Prompt Template
+      ↓
+Google Gemini
+      ↓
+Context-Aware Answer
+```
+
+---
+
+## 🎯 Example Use Case
+
+The notebook demonstrates a healthcare-focused assistant that can answer questions based on patient review context.
+
+For example:
+
+```text
+Context:
+"The discharge process was seamless!"
+
+Question:
+"Did anyone have a positive experience?"
+```
+
+The LLM is instructed to use the supplied context and avoid inventing information.
+
+The notebook also demonstrates restricting an assistant to healthcare-related questions.
+
+---
+
+## ⚠️ Challenges of RAG
+
+The project discusses several challenges involved in building production RAG systems:
+
+* Managing multiple data sources
+* Creating embeddings for large datasets
+* Incrementally updating vector stores
+* Scaling retrieval mechanisms
+* Orchestrating different components
+* Bias and fairness
+* Observability and performance monitoring
+
+---
+
+## 📈 Future Improvements
+
+Possible improvements to this project include:
+
+* Complete the retrieval and generation pipeline
+* Add a user-friendly web interface
+* Add document chunking and metadata filtering
+* Implement similarity search
+* Add conversation memory
+* Add source citations to generated answers
+* Improve error handling
+* Add evaluation metrics for retrieval quality
+* Deploy the application as a web service
+* Add support for PDF and DOCX documents
+
+---
+
+## 👨‍💻 Learning Outcomes
+
+Through this project, I explored:
+
+* Fundamentals of Retrieval-Augmented Generation
+* Large Language Models
+* Google Gemini
+* LangChain
+* Prompt Engineering
+* Embeddings
+* Vector Databases
+* ChromaDB
+* Document Retrieval
+* Context-aware LLM responses
+* RAG architecture
+
+---
+
+## 📓 Notebook
+
+The complete implementation and explanations are available in:
+
+```text
+project 18.ipynb
+```
+
+---
+
+## ⭐ Project Purpose
+
+This project was created as a practical exploration of **Generative AI, LangChain, and Retrieval-Augmented Generation**, with a focus on understanding how external knowledge can improve the relevance and reliability of LLM responses.
+
+---
+
+## 📄 License
+
+This project is intended for educational and learning purposes.
+
+
 
 
 
