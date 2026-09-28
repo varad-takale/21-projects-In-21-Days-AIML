@@ -3098,7 +3098,7 @@ The project can be further improved by:
 
 ---
 
-# program 18 : # Retrieval-Augmented Generation (RAG) with LangChain & Gemini
+# program 18 :Retrieval-Augmented Generation (RAG) with LangChain & Gemini
 
 ## 📌 Project Overview
 
