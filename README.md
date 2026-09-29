@@ -1715,13 +1715,7 @@ EarlyStopping(
 
 The best model weights are saved based on validation loss.
 
-Saved weight files include:
 
-```text
-best_ann_model_weights.weights.h5
-best_basic_cnn_model_weights.weights.h5
-best_deeper_cnn_model_weights.weights.h5
-```
 
 ## 📈 Model Evaluation
 
