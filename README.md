@@ -2730,7 +2730,7 @@ Show me the order count by country
 
 > *Sample values shown for demonstration.*
 
-# project 16 - # Intelligent Document Information Extraction using OCR and Gemini
+# project 16 -  Intelligent Document Information Extraction using OCR and Gemini
 
 ## 📌 Project Overview
 
@@ -3444,7 +3444,7 @@ Through this project, I explored:
 ---
 
 
-# project 19 - # 🤖 AI Market Analyst using CrewAI
+# project 19 -  🤖 AI Market Analyst using CrewAI
 
 An AI-powered **multi-agent market research and content generation system** built with **CrewAI, Google Gemini, and Serper**.
 
