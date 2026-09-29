@@ -3444,6 +3444,370 @@ Through this project, I explored:
 ---
 
 
+# project 19 - # 🤖 AI Market Analyst using CrewAI
+
+An AI-powered **multi-agent market research and content generation system** built with **CrewAI, Google Gemini, and Serper**.
+
+This project demonstrates how multiple AI agents can collaborate to research the latest trends in the **Artificial Intelligence industry** and automatically generate an informative blog post from the research.
+
+---
+
+## 📌 Project Overview
+
+The project uses a **CrewAI multi-agent architecture** where specialized AI agents work together to complete a workflow.
+
+The system contains:
+
+* 🔎 **Market Researcher Agent** – researches the latest AI industry trends.
+* ✍️ **Content Writer Agent** – converts the research findings into an engaging blog post.
+* 🧩 **CrewAI Crew** – coordinates the agents and tasks.
+* 🌐 **Serper API** – provides web search capabilities.
+* 🧠 **Google Gemini** – powers the AI agents.
+
+### Workflow
+
+```text
+User
+  ↓
+CrewAI
+  ↓
+Market Researcher Agent
+  ↓
+Web Search using Serper
+  ↓
+AI Industry Research
+  ↓
+Content Writer Agent
+  ↓
+Generated Blog Post
+  ↓
+blog_post.md
+```
+
+---
+
+## ✨ Features
+
+* Multi-agent AI workflow
+* Automated market research
+* Web search integration
+* Google Gemini LLM integration
+* AI-generated content
+* Sequential task execution
+* Automatic Markdown file generation
+* Demonstrates Agentic AI concepts
+* Built using CrewAI framework
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology    | Purpose                  |
+| ------------- | ------------------------ |
+| Python        | Programming language     |
+| CrewAI        | Multi-agent AI framework |
+| Google Gemini | Large Language Model     |
+| Serper        | Web search API           |
+| Google Colab  | Development environment  |
+| Markdown      | Generated report format  |
+
+---
+
+## 🧠 AI Agents
+
+### 1. Market Researcher
+
+**Role:** Market Researcher
+
+**Goal:** Find and analyze the latest trends in the AI industry.
+
+The researcher agent uses the Serper search tool to collect relevant information about:
+
+* AI advancements
+* Emerging technologies
+* Major AI players
+* Industry trends
+* Developments in Artificial Intelligence
+
+---
+
+### 2. Content Writer
+
+**Role:** Content Writer
+
+**Goal:** Create an engaging and informative blog post based on the research.
+
+The writer converts the research findings into content that is understandable to a non-technical audience.
+
+---
+
+## 📋 Tasks
+
+### Research Task
+
+The researcher is instructed to investigate the latest AI industry trends and produce a comprehensive research report.
+
+### Writing Task
+
+The writer uses the research output to create a **500-word blog post** describing important AI trends and their potential impact.
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+cd YOUR-REPOSITORY
+```
+
+Install the required packages:
+
+```bash
+pip install crewai crewai-tools langchain-google-genai
+```
+
+---
+
+## 🔑 API Keys
+
+This project requires API credentials for:
+
+* Google Gemini
+* Serper
+
+### Google Gemini
+
+Create a Gemini API key and configure it securely in your environment.
+
+### Serper
+
+Create a Serper API key from the Serper platform and configure it as an environment variable or Google Colab secret.
+
+> ⚠️ Never upload API keys directly into your GitHub repository.
+
+For example:
+
+```python
+import os
+
+os.environ["SECRETS_KEY"] = "YOUR_API_KEY"
+```
+
+Use your preferred secure secret-management method instead of hardcoding real credentials.
+
+---
+
+## 🚀 How to Run
+
+Open the notebook:
+
+```text
+project 19.ipynb
+```
+
+Then execute the cells in order.
+
+### Step 1 — Install dependencies
+
+```python
+!pip install crewai crewai-tools langchain-google-genai
+```
+
+### Step 2 — Import libraries
+
+```python
+import os
+from crewai import Agent, Task, Crew, Process, LLM
+from crewai_tools import SerperDevTool
+```
+
+### Step 3 — Initialize Gemini
+
+```python
+gemini_llm = LLM(
+    model="gemini/gemini-2.5-flash",
+    api_key=userdata.get('SECRETS_KEY')
+)
+```
+
+### Step 4 — Initialize the search tool
+
+```python
+search_tool = SerperDevTool()
+```
+
+### Step 5 — Create the research agent
+
+```python
+researcher = Agent(
+    role="Market Researcher",
+    goal="Find and analyze the latest trends in the AI industry",
+    tools=[search_tool],
+    llm=gemini_llm
+)
+```
+
+### Step 6 — Create the writer agent
+
+```python
+writer = Agent(
+    role="Content Writer",
+    goal="Write a compelling and engaging blog post about the latest AI trends",
+    llm=gemini_llm
+)
+```
+
+### Step 7 — Create the Crew
+
+```python
+marketing_crew = Crew(
+    agents=[researcher, writer],
+    tasks=[research_task, write_task],
+    process=Process.sequential,
+    verbose=True
+)
+```
+
+### Step 8 — Run the workflow
+
+```python
+result = marketing_crew.kickoff()
+```
+
+The generated content is then saved as:
+
+```text
+blog_post.md
+```
+
+---
+
+## 📊 Example Output
+
+The project generates an AI industry trends report covering topics such as:
+
+* Generative AI
+* AI Agents
+* Large Language Models
+* Enterprise AI adoption
+* Open-source AI
+* AI regulation
+* AI infrastructure
+* Automation
+
+---
+
+## 🏗️ Project Structure
+
+```text
+AI-Market-Analyst/
+│
+├── project 19.ipynb
+├── blog_post.md
+└── README.md
+```
+
+---
+
+## 🎯 Learning Objectives
+
+This project helped demonstrate:
+
+* Understanding of **Agentic AI**
+* Multi-agent collaboration
+* CrewAI architecture
+* AI agent roles and goals
+* Task-based AI workflows
+* Sequential processes
+* LLM integration
+* Web search integration
+* Automated content generation
+* Saving AI-generated results to files
+
+---
+
+## 🔄 Agentic AI Architecture
+
+```text
+                    ┌─────────────────────┐
+                    │      CrewAI         │
+                    │   Orchestration     │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 │                           │
+        ┌────────▼────────┐        ┌────────▼────────┐
+        │ Market Research │        │  Content Writer │
+        │      Agent      │───────▶│      Agent      │
+        └────────┬────────┘        └────────┬────────┘
+                 │                           │
+          Serper Web Search             Gemini LLM
+                 │                           │
+                 └─────────────┬─────────────┘
+                               │
+                       ┌───────▼────────┐
+                       │  Blog Post /   │
+                       │  AI Report     │
+                       └────────────────┘
+```
+
+---
+
+## 📚 Concepts Covered
+
+### Crew
+
+The overall environment that coordinates agents, tasks, processes, and outcomes.
+
+### Agents
+
+Specialized AI workers with defined roles, goals, and capabilities.
+
+### Tasks
+
+Specific instructions assigned to agents.
+
+### Tools
+
+External capabilities that agents can use, such as web search.
+
+### Process
+
+Defines how agents and tasks are executed.
+
+---
+
+## 🚧 Future Improvements
+
+Possible improvements include:
+
+* Add more specialized research agents
+* Add a fact-checking agent
+* Add a summarization agent
+* Generate PDF reports automatically
+* Add a Streamlit web interface
+* Store research results in a database
+* Add citation generation
+* Support multiple research topics
+* Add human approval before publishing
+* Deploy the application as a web service
+
+---
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in Java, Spring Boot, AI, and Software Engineering.
+
+---
+
+## ⭐ If You Find This Project Useful
+
+Feel free to ⭐ star the repository and explore the notebook to understand how **AI agents can collaborate to perform research and content-generation tasks**.
 
 
 
