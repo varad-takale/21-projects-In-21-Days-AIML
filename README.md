@@ -3779,35 +3779,8 @@ Defines how agents and tasks are executed.
 
 ---
 
-## 🚧 Future Improvements
 
-Possible improvements include:
 
-* Add more specialized research agents
-* Add a fact-checking agent
-* Add a summarization agent
-* Generate PDF reports automatically
-* Add a Streamlit web interface
-* Store research results in a database
-* Add citation generation
-* Support multiple research topics
-* Add human approval before publishing
-* Deploy the application as a web service
-
----
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in Java, Spring Boot, AI, and Software Engineering.
-
----
-
-## ⭐ If You Find This Project Useful
-
-Feel free to ⭐ star the repository and explore the notebook to understand how **AI agents can collaborate to perform research and content-generation tasks**.
 
 
 
