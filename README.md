@@ -4168,34 +4168,6 @@ Through this project, I explored:
 
 ---
 
-## 🔮 Future Improvements
-
-Possible future improvements include:
-
-* Add a user-friendly task input interface
-* Save agent execution history
-* Add structured output generation
-* Add more browser tools
-* Implement better error handling
-* Add authentication support
-* Build a dedicated web dashboard
-* Integrate additional LLM providers
-* Add automated reporting
-
----
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in Java, Spring Boot, Software Engineering, AI, and Automation.
-
----
-
-## ⭐ Project Purpose
-
-This project was created as a learning and experimentation project to understand how **Large Language Models can be combined with browser automation to create intelligent browser agents**.
 
 
 
