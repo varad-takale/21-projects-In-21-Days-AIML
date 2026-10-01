@@ -3775,7 +3775,7 @@ Defines how agents and tasks are executed.
 
 
 
-# project 20 - # 🤖 AI Browser Agent with Browser Use & Google Gemini
+# project 20 - 🤖 AI Browser Agent with Browser Use & Google Gemini
 
 An experimental project exploring **AI-powered browser automation** using **Browser Use** and **Google Gemini**.
 
@@ -4168,6 +4168,161 @@ Through this project, I explored:
 
 ---
 
+# Project 21 — n8n Workflow Automation
+
+## 📌 Overview
+
+This project explores **n8n**, a powerful low-code workflow automation tool used to connect applications and services, automate repetitive tasks, synchronize data, and build automated workflows.
+
+The project covers the fundamental concepts of automation workflows and demonstrates how n8n can be used to create workflows using different types of nodes.
+
+## 🚀 What is n8n?
+
+**n8n** is a workflow automation platform that allows users to connect different applications, services, APIs, databases, and other tools.
+
+It uses a **node-based workflow system**, where each node performs a specific function and nodes are connected together to define the flow of data.
+
+### Common Use Cases
+
+* Automating repetitive tasks
+* Synchronizing data between applications
+* Building data pipelines
+* Creating custom integrations
+* Working with APIs
+* Building AI-powered workflows
+
+## 🧩 Core Concepts
+
+### 1. Triggers
+
+A trigger starts an automation workflow.
+
+Examples:
+
+* Manual trigger
+* Scheduled trigger
+* Event-based trigger
+* Form submission
+* Git push
+
+### 2. Filters
+
+Filters control which data continues through a workflow based on specific conditions.
+
+Examples:
+
+* If a user is male → perform one action
+* If a customer is HNI → perform another action
+
+Other workflow operations can include:
+
+* Sorting
+* Formatting
+* Transforming data
+
+### 3. Actions
+
+Actions perform tasks using third-party applications or services.
+
+Examples:
+
+* Update a database row
+* Upload a file
+* Send a Slack message
+* Make an API request
+
+## 🔗 n8n Nodes
+
+Nodes are the basic building blocks of an n8n workflow.
+
+The project covers different categories of nodes:
+
+* **Trigger Nodes** — Start a workflow
+* **Action Nodes** — Perform operations
+* **Data Transformation Nodes** — Modify or transform data
+* **Flow Nodes** — Control workflow logic
+* **File Nodes** — Work with files
+* **Advanced Nodes** — More specialized workflow operations
+
+## ⚙️ Automation Workflow
+
+A typical automation workflow can be represented as:
+
+```text
+Trigger
+   ↓
+Filter / Condition
+   ↓
+Data Transformation
+   ↓
+Action
+   ↓
+Output / Persistence
+```
+
+## 🛠️ Running n8n Locally
+
+You can run n8n locally using Docker.
+
+### Create a Docker Volume
+
+```bash
+docker volume create n8n_data
+```
+
+### Run n8n
+
+```bash
+docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+```
+
+After starting n8n, open:
+
+```text
+http://localhost:5678
+```
+
+This will open the n8n editor in your browser.
+
+## 📚 Resources
+
+* [n8n Workflow Templates](https://n8n.io/workflows/)
+
+## 📂 Project Contents
+
+This repository contains learning material and examples covering:
+
+* n8n introduction
+* Automation concepts
+* Triggers
+* Filters
+* Actions
+* Nodes
+* Sample workflows
+* Local n8n setup using Docker
+
+## 🎯 Learning Objectives
+
+Through this project, I explored:
+
+* The fundamentals of workflow automation
+* How n8n workflows are structured
+* How triggers start workflows
+* How conditions and filters control data flow
+* How actions interact with external services
+* How nodes work together to create automation
+* How to run n8n locally using Docker
+
+## 👨‍💻 Author
+
+**Varad Takale**
+
+Computer Engineering Graduate
+Interested in **Java, Spring Boot, Software Development, Automation and AI**
+
+---
+
+⭐ If you find this project useful, feel free to explore the repository and experiment with n8n workflows.
 
 
 
