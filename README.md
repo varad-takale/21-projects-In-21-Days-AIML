@@ -4301,28 +4301,7 @@ This repository contains learning material and examples covering:
 * Sample workflows
 * Local n8n setup using Docker
 
-## 🎯 Learning Objectives
 
-Through this project, I explored:
-
-* The fundamentals of workflow automation
-* How n8n workflows are structured
-* How triggers start workflows
-* How conditions and filters control data flow
-* How actions interact with external services
-* How nodes work together to create automation
-* How to run n8n locally using Docker
-
-## 👨‍💻 Author
-
-**Varad Takale**
-
-Computer Engineering Graduate
-Interested in **Java, Spring Boot, Software Development, Automation and AI**
-
----
-
-⭐ If you find this project useful, feel free to explore the repository and experiment with n8n workflows.
 
 
 
